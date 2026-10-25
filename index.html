@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Quiet Pitch – Spoiler-free Premier League scores</title>
+<meta name="description" content="Find out which Premier League games are worth watching, or catch up on fixtures without spoiling a match you're about to watch.">
+<meta name="theme-color" content="#1c1d1f">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="bar">
+    <a class="logo" href="#/games">⚽ Quiet <span>Pitch</span></a>
+    <div class="tools">
+      <select id="leagueSel" class="leaguesel" aria-label="Competition" hidden></select>
+      <button class="btn" id="spoilerBtn" data-act="spoilers" aria-pressed="false"></button>
+    </div>
+  </div>
+  <nav id="nav" aria-label="Main">
+    <a href="#/games" data-r="games">Scores &amp; fixtures</a>
+    <a href="#/standings" data-r="standings">Table</a>
+    <a href="#/top" data-r="top">Top games</a>
+    <a href="#/saved" data-r="saved">Saved</a>
+    <a href="#/settings" data-r="settings">Settings</a>
+  </nav>
+</header>
+
+<main id="app"></main>
+
+<footer>
+  <p>Times shown in UK time. Spoilers reset to hidden every time you open the site.</p>
+  <p id="credit" hidden>Data provided by <a href="https://www.football-data.org" rel="noopener">football-data.org</a><span id="updated"></span></p>
+  <p>Unofficial fan project. Not affiliated with, sponsored by or endorsed by the Premier League or any club.</p>
+</footer>
+
+<dialog id="warn">
+  <form method="dialog">
+    <h2>Spoiler alert</h2>
+    <p>This may reveal scores and league positions.</p>
+    <label><input type="checkbox" id="nowarn"> Don't ask me again</label>
+    <div class="end">
+      <button class="btn" value="cancel">Cancel</button>
+      <button class="btn primary" value="ok" autofocus>Continue</button>
+    </div>
+  </form>
+</dialog>
+
+<!-- Order matters: teams, sample data, ratings, then the app. -->
+<script src="teams.js"></script>
+<script src="sample-data.js"></script>
+<script src="ratings.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
